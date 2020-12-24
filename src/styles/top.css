@@ -1,0 +1,129 @@
+.avue-top {
+  padding: 0 20px;
+  position: relative;
+  
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 28px;
+  height: 64px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  border-bottom:1px solid rgba(0, 21, 41, 0.08)
+}
+.avue-top .el-menu-item i, .avue-top .el-menu-item span {
+  font-size: 13px;
+}
+.avue-top .el-menu-item.is-active span,
+.avue-top .el-menu-item.is-active i {
+  color: #409EFF !important;
+}
+.avue-top .el-menu-item.is-active::before {
+  content: " ";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  position: absolute;
+}
+
+.avue-breadcrumb {
+  height: 100%;
+}
+.avue-breadcrumb i {
+  font-size: 30px !important;
+}
+.avue-breadcrumb--active {
+  transform: rotate(90deg);
+}
+
+.top-menu {
+  box-sizing: border-box;
+  width: 65%;
+}
+.top-menu .el-menu-item {
+  padding: 0 10px;
+  border: none !important;
+}
+
+.top-search {
+  line-height: 64px;
+  position: absolute !important;
+  left: 20px;
+  top: 0;
+  width: 400px !important;
+}
+.top-search .el-input__inner {
+  font-size: 13px;
+  border: none;
+  background-color: transparent;
+}
+
+.top-bar__img {
+  margin: 0 8px 0 5px;
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.top-bar__left,
+.top-bar__right {
+  height: 64px;
+  position: absolute;
+  top: 0;
+}
+.top-bar__left i,
+.top-bar__right i {
+  line-height: 64px;
+}
+
+.top-bar__left {
+  left: 20px;
+}
+
+.top-bar__right {
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__item {
+  position: relative;
+  display: inline-block;
+  height: 64px;
+  margin: 0 10px;
+  font-size: 16px;
+}
+.top-bar__item--show {
+  display: inline-block !important;
+}
+.top-bar__item .el-badge__content.is-fixed {
+  top: 12px;
+  right: 5px;
+}
+.top-bar__item .ant-menu-horizontal {
+  line-height: 64px;
+  height: 64px;
+  border-bottom: none;
+}
+
+.top-bar__title {
+  height: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: inherit;
+  font-weight: 400;
+}
+.top-bar__title .top-bar__item {
+  width: 100%;
+}
+.top-bar__title .ant-menu-submenu-title span {
+  font-size: 24px;
+}
