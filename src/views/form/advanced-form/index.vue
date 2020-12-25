@@ -24,7 +24,7 @@ export default {
 
 <style>
 .card {
-  margin:20px 20px 24px 20px;
+  margin:10px 10px 24px 10px;
 }
 
 .popover-wrapper /deep/ .antd-pro-pages-forms-style-errorPopover .ant-popover-inner-content {
