@@ -2,7 +2,7 @@
   "name": "vue-mock",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Lan1995 <Yang!!!19950203>",
+  "author": "Lan1995",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
