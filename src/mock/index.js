@@ -34,4 +34,5 @@ Mock.mock(/\/dashboard\/workplace\/radar/, 'get', dashboard.getRadar)
 //获取list
 Mock.mock(/\/list\/table\/list/, 'get', list.getTableList)
 Mock.mock(/\/list\/basic\/list/, 'get', list.getBasicList)
+Mock.mock(/\/list\/card\/list/, 'get', list.getCardList)
 export default Mock
