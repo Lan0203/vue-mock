@@ -20,6 +20,10 @@ Mock.mock(/\/user\/logout/, 'delete', login.logout)
 Mock.mock(/\/admin\/user\/info/, 'post', user.getUserInfo)
 Mock.mock(/\/admin\/user/, 'post', user.getUserList)
 
+//用户管理
+Mock.mock(/\/admin\/add\/user/, 'post', user.addUser)
+Mock.mock(/\/admin\/edit\/user/, 'post', user.editUser)
+Mock.mock(/\/admin\/del\/user/, 'post', user.delUser)
 //获取菜单信息
 Mock.mock(/\/admin\/menu/, 'post', menu.getMenuInfo)
 

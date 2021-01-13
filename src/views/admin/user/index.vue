@@ -19,14 +19,14 @@
         <el-table-column prop="role" label="角色"></el-table-column>
         <el-table-column prop="lockFlag" label="状态">
           <template slot-scope="scope">
-            <el-tag>{{scope.row.lockFlag == 0 ? '锁定' : '有效'}}</el-tag>
+            <el-tag :type="scope.row.lockFlag == 0 ? 'danger' : ''">{{scope.row.lockFlag == 0 ? '锁定' : '有效'}}</el-tag>
           </template>
         </el-table-column>
         <el-table-column prop="createTime" label="创建时间"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button type="text" size="mini" @click="editUser(scope.row)">编辑</el-button>
-            <el-button type="text" size="mini">删除</el-button>
+            <el-button type="text" size="mini" @click="delUser(scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -65,8 +65,10 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
-import {getUserListApi} from '@/api/admin/user.js';
+import Mock from 'mockjs';
+import { mapGetters } from 'vuex';
+import { getUserListApi, addUserApi, editUserApi, delUserApi } from '@/api/admin/user.js';
+import { dateFormat } from '@/util/date.js'
 export default {
   name: 'SysUser',
   data() {
@@ -77,7 +79,14 @@ export default {
       },
       userDialog:false,
       userTitle:'',
-      userForm:{},
+      userForm:{
+        userId:'',
+        username:'',
+        phone:'',
+        role:'',
+        lockFlag:'',
+        createTime:''
+      },
       userRules:{
         username: [
           {required: true, message: '请输入用户名', trigger: 'blur'}
@@ -99,7 +108,6 @@ export default {
     //获取用户列表
     getList(){
       getUserListApi().then(res =>{
-        console.log("res=",res)
         this.list=res.data.data;
       })
     },
@@ -116,8 +124,53 @@ export default {
       this.userDialog=true;
     },
     handleSubmit(){
-      this.userForm={};
-      this.userDialog=false;
+      if(this.userForm.userId == ""){
+        this.userForm.userId = Mock.Random.guid();
+        this.userForm.createTime =dateFormat(new Date());
+        addUserApi(this.userForm).then(res =>{
+          this.list=res.data.data;
+          this.$message.success('添加用户成功')
+          this.userForm={
+            userId:'',
+            username:'',
+            phone:'',
+            role:'',
+            lockFlag:'',
+            createTime:''
+          };
+          this.userDialog=false;
+        }).catch(error =>{
+          this.$message.error('添加用户失败');
+        })
+      }
+      else{
+        editUserApi(this.userForm).then( res =>{
+          this.list=res.data.data;
+          this.$message.success('修改用户成功')
+          this.userForm={
+            userId:'',
+            username:'',
+            phone:'',
+            role:'',
+            lockFlag:'',
+            createTime:''
+          };
+          this.userDialog=false;
+        })
+      }
+      
+    },
+    delUser(row){
+      this.$confirm('是否删除该用户, 是否继续?', '提示', {
+        confirmButtonText: '删除',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        delUserApi(row).then(res => {
+          this.list = res.data.data;
+          this.$message.success('删除成功')
+        })
+      })
     },
     handleCancel(){
       this.userForm={};

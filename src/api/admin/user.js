@@ -6,3 +6,27 @@ export const getUserListApi = () =>{
     method: 'post',
   })
 }
+
+export const addUserApi = (param) =>{
+  return request({
+    url: '/admin/add/user',
+    method: 'post',
+    data:param
+  })
+}
+
+export const editUserApi = (param) =>{
+  return request({
+    url: '/admin/edit/user',
+    method: 'post',
+    data:param
+  })
+}
+
+export const delUserApi = (param) =>{
+  return request({
+    url: '/admin/del/user',
+    method: 'post',
+    data:param
+  })
+}

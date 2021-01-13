@@ -58,5 +58,39 @@ export default {
       data: userList,
       msg: '获取用户列表成功'
     }
+  },
+  addUser: (config) =>{
+    userList.splice(0,0,JSON.parse(config.body))
+    return {
+      code: 200,
+      data: userList,
+      msg: '添加用户成功'
+    }
+  },
+  editUser: (config) =>{
+    let item= JSON.parse(config.body);
+    userList.forEach((items,index) =>{
+      if(items.userId == item.userId){
+        userList.splice(index,1,item)
+      }
+    });
+    return {
+      code: 200,
+      data: userList,
+      msg: '修改用户成功'
+    }
+  },
+  delUser: (config) =>{
+    let item= JSON.parse(config.body);
+    userList.forEach((items,index) =>{
+      if(items.userId == item.userId){
+        userList.splice(index,1)
+      }
+    });
+    return {
+      code: 200,
+      data: userList,
+      msg: '删除用户成功'
+    }
   }
 }
