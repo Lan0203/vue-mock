@@ -26,15 +26,16 @@
             @click="handleScreen"/>
         </div>
       </el-tooltip>
-      <!-- <el-tooltip
+      <el-tooltip
         v-if="userInfo.avatar"
         effect="dark"
         content="用户头像"
         placement="bottom">
-        <img
+        <a-avatar size="small" :src="userInfo.avatar" style="margin-right:8px"/>
+        <!-- <img
           id="thumbnail"
-          class="top-bar__img">
-      </el-tooltip> -->
+          class="top-bar__img"> -->
+      </el-tooltip>
       <el-dropdown>
         <span class="el-dropdown-link">
           {{ userInfo.username }}

@@ -341,7 +341,6 @@ export default {
         },
         colorField: 'name',
         color: ({name}) => {
-          console.log("type==",name)
           if(name == '河北') {
             return '#5db1ff';
           }
