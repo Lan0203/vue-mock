@@ -13,7 +13,7 @@
           </a-card-meta>
           <div class="cardItemContent">
             <span>{{ item.updatedAt }}</span>
-            <div class="avatarList">
+            <!-- <div class="avatarList">
               <avatar-list size="mini">
                 <avatar-list-item
                   v-for="(member, i) in item.members"
@@ -22,7 +22,7 @@
                   :tips="member.name"
                 />
               </avatar-list>
-            </div>
+            </div> -->
           </div>
         </a-card>
       </a-list-item>
