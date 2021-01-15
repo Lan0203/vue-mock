@@ -1,12 +1,11 @@
 <template>
   <div class="avue-top">
-    <!-- <div class="top-bar__left">
-      <div :class="[{'avue-breadcrumb--active': isCollapse}]"
-        class="avue-breadcrumb"
-      >
-        <i class="el-icon-s-fold" @click="setCollapse" />
-      </div>
-    </div> -->
+    <div class="top-bar__left">
+      <!-- <div class="avue-breadcrumb">
+        <i :class="isCollapse?'el-icon-s-unfold':'el-icon-s-fold'" 
+          @click.stop.prevent="setCollapse()" />
+      </div> -->
+    </div>
     <div class="top-bar__right">
       <el-tooltip effect="dark" content="锁屏" placement="bottom">
         <div class="top-bar__item">
@@ -32,9 +31,6 @@
         content="用户头像"
         placement="bottom">
         <a-avatar size="small" :src="userInfo.avatar" style="margin-right:8px"/>
-        <!-- <img
-          id="thumbnail"
-          class="top-bar__img"> -->
       </el-tooltip>
       <el-dropdown>
         <span class="el-dropdown-link">
@@ -61,7 +57,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { fullscreenToggel, handleImg, listenfullscreen } from '@/util/util'
+import { fullscreenToggel, listenfullscreen } from '@/util/util'
 import { option, list } from '@/const/setting'
 import { clearStore, removeStore } from '@/util/store.js'
 import topLock from './top-lock'
@@ -86,11 +82,10 @@ export default {
       'tag',
       'logsLen',
       'logsFlag',
-      'isShade'
     ])
   },
   created() {
-    //handleImg(this.userInfo.avatar, 'thumbnail')
+    
   },
   mounted() {
     listenfullscreen(this.setScreen);
@@ -100,7 +95,7 @@ export default {
       fullscreenToggel()
     },
     setCollapse() {
-      console.log("setCollapse--",this.isCollapse)
+      console.log("this.isCollapse==",this.isCollapse)
       this.$store.commit('SET_COLLAPSE')
     },
     setScreen() {
@@ -113,9 +108,15 @@ export default {
         type: 'warning'
       }).then(() => {
         this.$store.dispatch('LogOut').then(() => {
-            this.$router.push({ path: '/login' })
+          this.$router.push({ path: '/login' })
         })
       })
+      .catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消删除'
+        });          
+      });
       
     },
     

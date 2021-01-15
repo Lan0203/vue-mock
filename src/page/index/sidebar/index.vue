@@ -6,14 +6,14 @@
       <el-menu
         :default-active="nowTagValue"
         :show-timeout="200"
-        :collapse="keyCollapse"
+        :collapse="isCollapse"
         unique-opened
         mode="vertical">
         <sidebar-item
           :menu="menu"
           :screen="screen"
           :props="website.menu.props"
-          :collapse="keyCollapse"
+          :collapse="isCollapse"
           first/>
       </el-menu>
     </el-scrollbar>
@@ -33,7 +33,7 @@ export default {
     this.Index.openMenu(this.userInfo.username);
   },
   computed: {
-    ...mapGetters(['website','userInfo', 'menu', 'tag', 'keyCollapse', 'screen',]),
+    ...mapGetters(['website','userInfo', 'menu', 'tag', 'screen','isCollapse']),
     nowTagValue: function() {
       return this.$router.$avueRouter.getValue(this.$route)
     }

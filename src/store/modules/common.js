@@ -5,7 +5,6 @@ const common = {
   state: {
     isCollapse: false,
     isFullScren: false,
-    isShade: false,
     screen: -1,
     isLock: getStore({ name: 'isLock' }) || false,
     theme: getStore({ name: 'theme' }) || '#409EFF',
@@ -15,9 +14,6 @@ const common = {
   },
   actions: {},
   mutations: {
-    SET_SHADE: (state, active) => {
-      state.isShade = active
-    },
     SET_COLLAPSE: (state) => {
       state.isCollapse = !state.isCollapse;
     },

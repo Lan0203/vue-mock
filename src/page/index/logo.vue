@@ -1,6 +1,6 @@
 <template>
   <div class="avue-logo">
-    <!-- <transition name="fade">
+    <transition name="fade">
       <span
         v-if="isCollapse"
         key="0"
@@ -12,22 +12,7 @@
       <template v-if="!isCollapse">
         <span
           key="1"
-          class="avue-logo_title">vue </span>
-      </template>
-    </transition-group> -->
-    <transition name="fade">
-      <span
-        v-if="keyCollapse"
-        key="0"
-        class="avue-logo_subtitle">
-        {{ website.logo }}
-      </span>
-    </transition>
-    <transition-group name="fade">
-      <template v-if="!keyCollapse">
-        <span
-          key="1"
-          class="avue-logo_title">Vue</span>
+          class="avue-logo_title">Vue </span>
       </template>
     </transition-group>
   </div>
@@ -42,7 +27,7 @@ export default {
   },
   created() {},
   computed: {
-    ...mapGetters(['keyCollapse','website','isCollapse'])
+    ...mapGetters(['website','isCollapse'])
   },
   methods: {}
 }
@@ -70,21 +55,22 @@ export default {
   font-size: 20px;
   overflow: hidden;
   box-sizing: border-box;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); */
   color: rgba(255, 255, 255, 0.8);
   z-index: 1024;
-  &_title {
-    display: block;
-    text-align: center;
-    font-weight: 300;
-    font-size: 16px;
-  }
-  &_subtitle {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-  }
+}
+.avue-logo_title {
+  display: block;
+  text-align: center;
+  /* font-weight: 300; */
+  font-weight: bold;
+  font-size: 26px;
+}
+.avue-logo_subtitle {
+  display: inline-block;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
 }
 </style>

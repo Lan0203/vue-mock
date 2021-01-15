@@ -2,6 +2,7 @@
 @import './top.css';
 @import './tags.css';
 @import './sidebar.css';
+/* @import './theme/index.css'; */
 @import './media.css';
 a {
   text-decoration: none;

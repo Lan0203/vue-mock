@@ -96,7 +96,8 @@ export default {
       return validatenull(val)
     },
     open(item) {
-      //if (this.screen <= 1) this.$store.commit('SET_COLLAPSE')
+      console.log("this.screen==",this.screen)
+      if (this.screen <= 1) this.$store.commit('SET_COLLAPSE')
       this.$router.$avueRouter.group = item.group
       this.$router.push({
         path: this.$router.$avueRouter.getPath({

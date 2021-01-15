@@ -26,10 +26,6 @@ export const list = [
     commit: 'SET_SHOWFULLSCREN'
   }, 
   {
-    key: 'showCollapse',
-    commit: 'SET_SHOWCOLLAPSE'
-  }, 
-  {
     key: 'showSearch',
     commit: 'SET_SHOWSEARCH'
   }, 
@@ -100,16 +96,16 @@ export const option = (safe) => {
           _safe.set(column.prop)
         }
       }, 
-      {
-        label: '缩放',
-        prop: 'showCollapse',
-        type: 'switch',
-        span: 24,
-        dicData: dicData,
-        click: ({ column }) => {
-          _safe.set(column.prop)
-        }
-      }, 
+      // {
+      //   label: '缩放',
+      //   prop: 'showCollapse',
+      //   type: 'switch',
+      //   span: 24,
+      //   dicData: dicData,
+      //   click: ({ column }) => {
+      //     _safe.set(column.prop)
+      //   }
+      // }, 
       // {
       //   label: '顶部菜单',
       //   prop: 'showMenu',

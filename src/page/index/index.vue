@@ -25,12 +25,12 @@
         </el-scrollbar>
       </div>
     </div>
-    <div class="avue-shade" @click="showCollapse"/>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
+import admin from '@/util/admin'
 import tags from './tags'
 import top from './top';
 import sidebar from './sidebar';
@@ -50,9 +50,17 @@ export default {
   created() {
 
   },
+  mounted() {
+    this.init()
+  },
   methods: {
-    showCollapse() {
-      this.$store.commit('SET_COLLAPSE')
+    init() {
+      this.$store.commit('SET_SCREEN', admin.getScreen())
+      window.onresize = () => {
+        setTimeout(() => {
+          this.$store.commit('SET_SCREEN', admin.getScreen())
+        }, 0)
+      }
     },
     openMenu() {
       this.$store.dispatch("GetMenu",this.userInfo.username).then(data => {
