@@ -1,143 +1,183 @@
 <template>
-  <div>
-    <basic-container>
-      <el-row :gutter="18">
-        <el-col :span='6' class="gutter-row">
-          <div class="gutter-box">
-            <el-card shadow="hover">
-              <div class="clear y-center">
-                <div class="pull-left mr-m">
-                  <i class="el-icon-sort text-2x" ></i>
-                </div>
-                <div class='clear'>
-                  <div class='text-muted'>更新总量</div>
-                  <h2>1001</h2>
-                </div>
+  <div class="wel">
+    <a-row>
+      <a-col :span="24">
+        <a-card :bordered="false" class="page-header-welcome">
+          <h1>
+            {{ timeFix }}，{{ userInfo.username }}，<span>祝你开心每一天！</span>
+          </h1>
+          <p class="desc">前端工程师 | 蚂蚁金服 - 某某某事业群 - VUE平台</p>
+        </a-card>
+      </a-col>
+    </a-row>
+    <a-row :gutter="16" style="margin-left: -12px; margin-right: -12px;margin-top: 24px">
+      <a-col :xl="17" :lg="17" :md="24" :sm="24" :xs="24" style="padding-left: 12px; padding-right: 12px">
+        <a-card :bordered="false" style="margin-bottom: 24px;">
+          <a-row>
+            <a-col :md="6" :sm="24" :xs="24">
+              <div class="basic-list-header-info" style="border-right:1px solid #eee">
+                <span>我的待办</span>
+                <p>8个任务</p>
+                <em></em>
               </div>
-              <div class="clear y-center">
-                <div class="pull-left mr-m">
-                  <i class="el-icon-plus text-2x text-danger" ></i>
-                </div>
-                <div class='clear'>
-                  <div class='text-muted'>插入总量</div>
-                  <h2>1005</h2>
-                </div>
+            </a-col>
+            <a-col :md="6" :sm="24" :xs="24">
+              <div class="basic-list-header-info" style="border-right:1px solid #eee">
+                <span>本周任务平均处理时间</span>
+                <p>32分钟</p>
+                <em></em>
               </div>
-            </el-card>
+            </a-col>
+            <a-col :md="6" :sm="24" :xs="24" style="border-right:1px solid #eee">
+              <div class="basic-list-header-info">
+                <span>本周完成任务数</span>
+                <p>24个任务</p>
+                <em></em>
+              </div>
+            </a-col>
+            <a-col :md="6" :sm="24" :xs="24">
+              <div class="basic-list-header-info">
+                <span>异常（个）</span>
+                <p>1</p>
+                <em></em>
+              </div>
+            </a-col>
+          </a-row>
+        </a-card>
+        <a-card :bordered="false" title="动态">
+          <a-list>
+            <a-list-item :key="index" v-for="(item, index) in activity">
+              <a-list-item-meta>
+                <a-avatar slot="avatar" :src="item.user.avatar"/>
+                <div slot="title">
+                  <span>{{ item.user.nickname }}</span>&nbsp;
+                  在&nbsp;<a href="#">{{ item.project.name }}</a>&nbsp;
+                  <span>{{ item.project.action }}</span>&nbsp;
+                  <a href="#">{{ item.project.event }}</a>
+                </div>
+                <div slot="description">{{ item.time }}</div>
+              </a-list-item-meta>
+            </a-list-item>
+          </a-list>
+        </a-card>
+      </a-col>
+      <a-col :xl="7" :lg="7" :md="24" :sm="24" :xs="24">
+        <div class="cover-tips" style="margin-bottom:24px">
+          <img src="https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png" />
+        </div>
+        <a-card :bordered="false" style="margin-bottom:24px"  :tab-list="tabListNoTitle"
+          :active-tab-key="noTitleKey" @tabChange="key => onTabChange(key, 'noTitleKey')"
+        >
+          <div class="members" v-if="noTitleKey === '我的'||noTitleKey === '收藏'">
+            <a-row>
+              <a-col :span="8" v-for="(item,index) in teams" :key="index">
+                <a>
+                  <a-avatar class="member-cover" :src="item.avatar" size="large" />
+                  <span class="member">{{item.name}}</span>
+                </a>
+              </a-col>
+            </a-row>
           </div>
-        </el-col>
-        <el-col :span='6' class="gutter-row">
-          <div class="gutter-box">
-            <el-card shadow="hover">
-              <div class="clear y-center">
-                <div class="pull-left mr-m">
-                  <i class="el-icon-cloudy text-2x" ></i>
-                </div>
-                <div class='clear'>
-                  <div class='text-muted'>云数据</div>
-                  <h2>30122</h2>
-                </div>
-              </div>
-            </el-card>
-          </div>
-        </el-col>
-        <el-col :span='6' class="gutter-row">
-          <div class="gutter-box">
-            <el-card shadow="hover">
-              <div class="clear y-center">
-                <div class="pull-left mr-m">
-                  <i class="el-icon-warning-outline text-2x text-info" ></i>
-                </div>
-                <div class='clear'>
-                  <div class='text-muted'>日志</div>
-                  <h2>802</h2>
-                </div>
-              </div>
-            </el-card>
-          </div>
-        </el-col>
-        <el-col :span='6' class="gutter-row">
-          <div class="gutter-box">
-            <el-card shadow="hover">
-              <div class="clear y-center">
-                <div class="pull-left mr-m">
-                  <i class="el-icon-message text-2x text-success" ></i>
-                </div>
-                <div class='clear'>
-                  <div class='text-muted'>邮件</div>
-                  <h2>105</h2>
-                </div>
-              </div>
-            </el-card>
-          </div>
-        </el-col>
-      </el-row>
-    </basic-container>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
 <script>
+import { timeFix } from '@/util/util'
+import { mapGetters } from 'vuex';
+import { getActivityApi, getTeamsApi,} from '@/api/dashboard/workplace.js'
 export default {
   name:'Wel',
+  data() {
+    return {
+      timeFix: timeFix(),
+      activity: [],
+      tabListNoTitle: [
+        {
+          key: '我的',
+          tab: '我的',
+        },
+        {
+          key: '收藏',
+          tab: '收藏',
+        }
+      ],
+      noTitleKey: '我的',
+      teams: [],
+    }
+  },
+  computed: {
+    ...mapGetters(['userInfo'])
+  },
+  mounted() {
+    this.getActivity();
+    this.getTeams();
+  },
+  methods: {
+    getActivity(){
+      getActivityApi().then(res =>{
+        this.activity = res.data.data
+      })
+    },
+    getTeams(){
+      getTeamsApi().then(res => {
+        this.teams = res.data.data
+      })
+    },
+    onTabChange(key, type) {
+      this[type] = key;
+    },
+  }
 }
 </script>
 
 <style scoped>
-.wel-contailer {
-    position: relative;
-  }
+.wel{
+  margin:20px
+}
+.wel .page-header-welcome{
+ background: #27a6fe;
+}
+.wel .page-header-welcome h1{
+  font-size: 24px;
+  color: #fff
+}
+.wel .page-header-welcome .desc{
+  color: #fff
+}
+.wel .basic-list-header-info{
+  position: relative;
+  text-align: center;
+}
+.wel .basic-list-header-info >span{
+  display: inline-block;
+  margin-bottom: 4px;
+  color: rgba(0,0,0,.45);
+  font-size: 14px;
+  line-height: 22px;
+}
+.wel .basic-list-header-info >p{
+  margin: 0;
+  color: rgba(0,0,0,.85);
+  font-size: 24px;
+  line-height: 32px;
+}
+.wel .cover-tips{
+  width: 100%
+} 
+.wel .cover-tips >img{
+  display: block;
+  width: 100%;
+}
 
-  .container{
-    width: 100%;
-  }
-  .iframe {
-    width: 100%;
-    height: 940px;
-    border: 0;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-  .gutter-example >div{
-    background: transparent;
-    border: 0;
-  }
-  .gutter-box {
-      padding: 5px 0;
-  }
-  .clear{
-    display: inline-block;
-    overflow: hidden;
-  }
-  .y-center{
-    margin-left: 20px;
-    align-items: center;
-  }
-  .pull-left {
-    float: left;
-  }
-  .mr-m{
-    margin-right: 1rem !important;
-  }
-  i.el-icon-sort{
-    font-size: 3rem !important;
-    color:#6887ff !important;
-    opacity:0.8;
-  }
-  .text-danger{
-    color:#f44455 !important;
-    opacity:0.8;
-  }
-  .text-2x{
-    font-size: 3rem
-  }
-  .text-muted{
-    opacity: .6;
-  }
-  .text-info{
-    color: #7D3CD5 !important;
-    opacity:0.8;
-  }
-  .text-success{
-    color: #6cc788 !important
-  }
+.wel .members a .member{
+  font-size: 14px;
+  color: rgba(0,0,0,.65);
+  line-height: 24px;
+  vertical-align: top; 
+  transition: all .3s;
+  /* display: block; */
+}
 </style>

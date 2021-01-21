@@ -5,13 +5,13 @@
     >
       <h2>用户登录</h2>
       <el-form-item label="用户名" prop="username">
-        <el-input v-model="loginForm.username"></el-input>
+        <el-input v-model="loginForm.username" @keyup.enter.native="handleLogin('loginForm')"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
-        <el-input v-model="loginForm.password" type="password"></el-input>
+        <el-input v-model="loginForm.password" type="password" @keyup.enter.native="handleLogin('loginForm')"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button class="login-btn" type="primary" @click="handleLogin('loginForm')">登录</el-button>
+        <el-button class="login-btn" type="primary" @click.native.prevent="handleLogin('loginForm')">登录</el-button>
       </el-form-item>
     </el-form>
   </div>
