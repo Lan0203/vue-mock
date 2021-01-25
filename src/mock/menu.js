@@ -35,7 +35,7 @@ const menuMap = {
     ]},
     {icon:'iconfont icon-yonghu',keepAlive: '0',label: '个人页', name:'个人页', path: '/account',children:[
       {icon:'iconfont icon-gerenzhongxin',keepAlive: "1", label: "个人中心", name: "个人中心",path: "/account/center/index",children: []},
-      {icon:'iconfont icon-gerenshezhi1',keepAlive: "0",label: "个人设置",name: "个人设置", path: "/account/setting/index",children: []},
+      // {icon:'iconfont icon-gerenshezhi1',keepAlive: "0",label: "个人设置",name: "个人设置", path: "/account/setting/index",children: []},
     ]},
   ],
   editor:[
@@ -69,7 +69,7 @@ const menuMap = {
     ]},
     {icon:'iconfont icon-yonghu',keepAlive: '0',label: '个人页', name:'个人页', path: '/account',children:[
       {icon:'iconfont icon-gerenzhongxin',keepAlive: "1", label: "个人中心", name: "个人中心",path: "/account/center/index",children: []},
-      {icon:'iconfont icon-gerenshezhi1',keepAlive: "0",label: "个人设置",name: "个人设置", path: "/account/setting/index",children: []},
+      // {icon:'iconfont icon-gerenshezhi1',keepAlive: "0",label: "个人设置",name: "个人设置", path: "/account/setting/index",children: []},
     ]},
   ],
 

@@ -42,7 +42,7 @@
             <router-link to="/">首页</router-link>
           </el-dropdown-item>
           <el-dropdown-item divided>
-            <router-link to="/info/index">个人信息</router-link>
+            <router-link to="/account/center/index">个人信息</router-link>
           </el-dropdown-item>
           
           <el-dropdown-item

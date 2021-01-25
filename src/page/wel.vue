@@ -70,10 +70,16 @@
         >
           <div class="members" v-if="noTitleKey === '我的'||noTitleKey === '收藏'">
             <a-row>
-              <a-col :span="8" v-for="(item,index) in teams" :key="index">
+              <!-- <a-col :span="12" v-for="(item,index) in teams" :key="index" style="padding-top:10px">
                 <a>
                   <a-avatar class="member-cover" :src="item.avatar" size="large" />
                   <span class="member">{{item.name}}</span>
+                </a>
+              </a-col> -->
+              <a-col :span="12" v-for="(item,index) in projects" :key="index" style="padding-top:10px">
+                <a>
+                  <a-avatar class="member-cover" :src="item.cover" size="large" />
+                  <span class="member">{{item.title}}</span>
                 </a>
               </a-col>
             </a-row>
@@ -87,7 +93,7 @@
 <script>
 import { timeFix } from '@/util/util'
 import { mapGetters } from 'vuex';
-import { getActivityApi, getTeamsApi,} from '@/api/dashboard/workplace.js'
+import { getActivityApi, getTeamsApi, getProjectsApi,} from '@/api/dashboard/workplace.js'
 export default {
   name:'Wel',
   data() {
@@ -106,6 +112,7 @@ export default {
       ],
       noTitleKey: '我的',
       teams: [],
+      projects: [],
     }
   },
   computed: {
@@ -113,7 +120,8 @@ export default {
   },
   mounted() {
     this.getActivity();
-    this.getTeams();
+    // this.getTeams();
+    this.getProjects();
   },
   methods: {
     getActivity(){
@@ -124,6 +132,11 @@ export default {
     getTeams(){
       getTeamsApi().then(res => {
         this.teams = res.data.data
+      })
+    },
+    getProjects(){
+      getProjectsApi().then(res =>{
+        this.projects = res.data.data;
       })
     },
     onTabChange(key, type) {
