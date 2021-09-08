@@ -1,0 +1,740 @@
+{
+  column: [
+    {
+      type: 'input',
+      label: '卡片编号',
+      span: 8,
+      display: true,
+      prop: 'cardid'
+    },
+    {
+      type: 'radio',
+      label: '报告类型',
+      span: 8,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'cardtype',
+      button: false,
+      border: false,
+      disabled: false,
+      required: false,
+      rules: [],
+      dicData: [
+        {
+          label: '初次报告',
+          value: 'col_59520'
+        },
+        {
+          label: '订正报告',
+          value: 'col_26693'
+        }
+      ]
+    },
+    {
+      type: 'input',
+      label: '订正原因',
+      span: 8,
+      display: true,
+      prop: 'result'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443172559_82459'
+    },
+    {
+      type: 'input',
+      label: '姓名',
+      span: 6,
+      display: true,
+      prop: 'name'
+    },
+    {
+      type: 'input',
+      label: '患儿家长姓名',
+      span: 6,
+      display: true,
+      prop: 'parentName'
+    },
+    {
+      type: 'input',
+      label: '病人类型',
+      span: 6,
+      display: true,
+      prop: 'patientType'
+    },
+    {
+      type: 'input',
+      label: '就诊号',
+      span: 6,
+      display: true,
+      prop: 'patientNo'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443211336_71286'
+    },
+    {
+      type: 'radio',
+      label: '性别',
+      dicData: [
+        {
+          label: '男',
+          value: '0'
+        },
+        {
+          label: '女',
+          value: '1'
+        }
+      ],
+      span: 6,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'gendername'
+    },
+    {
+      type: 'input',
+      label: '有效证件号',
+      span: 12,
+      display: true,
+      prop: 'idcardcode'
+    },
+    {
+      type: 'input',
+      label: '证件类型',
+      span: 6,
+      display: true,
+      prop: 'idcardtype'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443229042_95537'
+    },
+    {
+      type: 'input',
+      label: '出生日期',
+      span: 12,
+      display: true,
+      prop: 'birth',
+      rules: []
+    },
+    {
+      type: 'radio',
+      label: '年龄单位',
+      dicData: [
+        {
+          label: '岁',
+          value: '0'
+        },
+        {
+          label: '月',
+          value: '1'
+        },
+        {
+          label: '天',
+          value: '2'
+        }
+      ],
+      span: 12,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'ageType'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443241677_34331'
+    },
+    {
+      type: 'input',
+      label: '工作单位',
+      span: 12,
+      display: true,
+      prop: 'componyname'
+    },
+    {
+      type: 'input',
+      label: '联系电话',
+      span: 10,
+      display: true,
+      prop: 'comPhone',
+      rules: []
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443256652_77636'
+    },
+    {
+      type: 'radio',
+      label: '病人属于',
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'currentaddrtype',
+      dicFlag: false,
+      dicData: []
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627453279051_84102'
+    },
+    {
+      type: 'select',
+      label: '现住址',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      cascaderItem: [],
+      span: 6,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'sheng'
+    },
+    {
+      type: 'select',
+      label: '',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      cascaderItem: [],
+      span: 6,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'shi'
+    },
+    {
+      type: 'select',
+      label: '',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      cascaderItem: [],
+      span: 6,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'xian'
+    },
+    {
+      type: 'select',
+      label: '',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      cascaderItem: [],
+      span: 6,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'xiang'
+    },
+    {
+      type: 'input',
+      label: '',
+      span: 6,
+      display: true,
+      prop: 'cun'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443265740_59284'
+    },
+    {
+      type: 'radio',
+      label: '人群分类',
+      dicData: [
+        {
+          label: '幼托儿童',
+          value: '0'
+        },
+        {
+          label: '散居儿童',
+          value: '1'
+        },
+        {
+          label: '学生(大中小学)',
+          value: '2'
+        },
+        {
+          label: '教师',
+          value: 'col_38211'
+        },
+        {
+          label: '保育员及保姆',
+          value: 'col_26618'
+        },
+        {
+          label: '餐饮食品业',
+          value: 'col_27338'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: 'nultitudetypecode'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443277537_27917'
+    },
+    {
+      type: 'radio',
+      label: '病人分类 (1)',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627439969794_65211'
+    },
+    {
+      type: 'radio',
+      label: '(2)',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627439999263_23210'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443286297_66706'
+    },
+    {
+      type: 'date',
+      label: '发病日期',
+      span: 24,
+      display: true,
+      format: 'yyyy-MM-dd',
+      valueFormat: 'yyyy-MM-dd',
+      prop: '1627440035467_61391'
+    },
+    {
+      type: 'date',
+      label: '诊断日期',
+      span: 8,
+      display: true,
+      format: 'yyyy-MM-dd',
+      valueFormat: 'yyyy-MM-dd',
+      prop: '1627440150294_54977'
+    },
+    {
+      type: 'time',
+      label: '时',
+      span: 8,
+      display: true,
+      format: 'HH:mm:ss',
+      valueFormat: 'HH:mm:ss',
+      prop: '1627440184028_92359'
+    },
+    {
+      type: 'date',
+      label: '死亡日期',
+      span: 24,
+      display: true,
+      format: 'yyyy-MM-dd',
+      valueFormat: 'yyyy-MM-dd',
+      prop: '1627440211632_99163'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443291213_49915'
+    },
+    {
+      type: 'radio',
+      label: '甲类传染病',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627440231604_85830'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443297715_91534'
+    },
+    {
+      type: 'radio',
+      label: '乙类传染病',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627440256558_45935'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443299847_8571'
+    },
+    {
+      type: 'radio',
+      label: '丙类传染病',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627440269233_50545'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443311979_50453'
+    },
+    {
+      type: 'radio',
+      label: '其他法定管理以及重点监测传染病:',
+      dicData: [
+        {
+          label: '选项一',
+          value: '0'
+        },
+        {
+          label: '选项二',
+          value: '1'
+        },
+        {
+          label: '选项三',
+          value: '2'
+        }
+      ],
+      span: 24,
+      display: true,
+      props: {
+        label: 'label',
+        value: 'value'
+      },
+      prop: '1627440309711_62003'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443315995_56007'
+    },
+    {
+      type: 'input',
+      label: '订正病名',
+      span: 24,
+      display: true,
+      prop: '1627440332015_61904'
+    },
+    {
+      type: 'input',
+      label: '报告单位',
+      span: 8,
+      display: true,
+      prop: '1627440362268_10668'
+    },
+    {
+      type: 'input',
+      label: '联系电话',
+      span: 8,
+      display: true,
+      prop: '1627440371505_78186'
+    },
+    {
+      type: 'input',
+      label: '填卡医生',
+      span: 8,
+      display: true,
+      prop: '1627440379798_70549'
+    },
+    {
+      type: 'date',
+      label: '填卡日期',
+      span: 8,
+      display: true,
+      format: 'yyyy-MM-dd',
+      valueFormat: 'yyyy-MM-dd',
+      prop: '1627440399820_47412'
+    },
+    {
+      title: '分割线',
+      component: 'el-divider',
+      span: 24,
+      tips: '看我：自定义属性怎么用？',
+      labelWidth: '0px',
+      params: {
+        html: '',
+        contentPosition: 'left'
+      },
+      prop: '1627443294744_74484'
+    },
+    {
+      type: 'textarea',
+      label: '备注',
+      span: 24,
+      display: true,
+      prop: '1627440410497_95066'
+    }
+  ],
+  labelPosition: 'left',
+  labelSuffix: '：',
+  labelWidth: 110,
+  gutter: 0,
+  menuBtn: true,
+  submitBtn: true,
+  submitText: '提交',
+  emptyBtn: false,
+  emptyText: '清空',
+  menuPosition: 'center',
+  readonly: false,
+  detail: false,
+  tabs: false,
+  disabled: false
+}

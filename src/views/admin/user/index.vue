@@ -12,7 +12,8 @@
     </div>
     <div>
       <el-button type="primary" style="margin-bottom:10px" @click="handleAddUser"><i class="iconfont icon-bianji1"></i>添加</el-button>
-      <el-table :data="list" border>
+      <el-button type="primary" style="margin-bottom:10px" @click="exportData"><i class="iconfont icon-bianji1"></i>导出</el-button>
+      <el-table :data="list" border max-height="500px" class="executive-table">
         <el-table-column type="index" label="序号" width="80"></el-table-column>
         <el-table-column prop="username" label="用户名"></el-table-column>
         <el-table-column prop="phone" label="手机号"></el-table-column>
@@ -68,7 +69,8 @@
 import Mock from 'mockjs';
 import { mapGetters } from 'vuex';
 import { getUserListApi, addUserApi, editUserApi, delUserApi } from '@/api/admin/user.js';
-import { dateFormat } from '@/util/date.js'
+import { dateFormat } from '@/util/date.js';
+import {export2Excel} from '@/excel/exportUtil.js';
 export default {
   name: 'SysUser',
   data() {
@@ -94,13 +96,18 @@ export default {
         lockFlag: [
           { required: true, message: '请选择状态', trigger: 'blur' }
         ],
-      }
+      },
+      columns: [{title: '用户名',key: 'username'},{title:'手机号',key: 'phone'}],
+      count:0
     }
   },
   mounted() {
     this.getList();
   },
   methods: {
+    exportData(){
+      export2Excel(this.columns,this.list)
+    },
     //查询用户
     searchUser(){
 
@@ -110,6 +117,36 @@ export default {
       getUserListApi().then(res =>{
         this.list=res.data.data;
       })
+      this.$nextTick(()=>{
+         let box = this.$el.querySelector(".executive-table .el-table__body-wrapper")
+         box.scrollTop = box.scrollHeight
+         console.log("123")
+      })
+
+      // this.$nextTick(() => {
+      //   let msg = document.querySelector(".executive-table .el-table__body-wrapper"); // 获取对象
+      //   console.log("msg==",msg)
+      //   console.log("msg.scrollTop==",msg.scrollTop)
+      //   console.log("msg.scrollHeight==",msg.scrollHeight)
+      //   console.log("count==",this.count)
+      //   const scrollTop = msg.scrollTop;
+			//   const scrollHeight = msg.scrollHeight;
+      //   if ((msg.offsetHeight + scrollTop) - scrollHeight == 0) {//如果置底
+      //   console.log("123456789")
+      //   }
+      //   if (msg.scrollTop == msg.scrollHeight && this.count != 0) {
+      //     msg.scrollTop = msg.scrollHeight; // 滚动高度
+      //   } else if (this.count == 0) {
+      //     console.log("this.count==",this.count)
+      //     this.count ++
+      //     msg.scrollTop = msg.scrollHeight;
+      //     console.log("msg.scrollHeight==",msg.scrollHeight)
+      //     console.log("msg.scrollTop==",msg.scrollTop)
+      //   } else {
+      //     console.log("else")
+      //     msg.scrollTop = msg.scrollTop
+      //   }
+      // });
     },
     //新增按钮
     handleAddUser(){

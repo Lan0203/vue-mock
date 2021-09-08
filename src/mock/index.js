@@ -5,6 +5,7 @@ import menu from './menu';
 import dashboard from './dashboard';
 import list from './list';
 import account from './account';
+import timeline from './timeline';
 
 // 设置全局延时 没有延时的话有时候会检测不到数据变化 建议保留
 Mock.setup({
@@ -26,7 +27,10 @@ Mock.mock(/\/admin\/edit\/user/, 'post', user.editUser)
 Mock.mock(/\/admin\/del\/user/, 'post', user.delUser)
 //获取菜单信息
 Mock.mock(/\/admin\/menu/, 'post', menu.getMenuInfo)
-
+//获取时间轴信息
+Mock.mock(/\/admin\/timeline\/list/, 'get', timeline.getTimelineList)
+Mock.mock(/\/admin\/timeline\/list1/, 'post', timeline.getSecondList)
+Mock.mock(/\/admin\/timeline\/list2/, 'post', timeline.getThreeList)
 //获取dashboard
 Mock.mock(/\/dashboard\/analysis\/searchlist/, 'get', dashboard.getSearchList)
 Mock.mock(/\/dashboard\/monitor\/hotsearch/, 'get', dashboard.getHotSearch)
@@ -44,4 +48,6 @@ Mock.mock(/\/list\/card\/list/, 'get', list.getCardList)
 //获取个人信息文章列表
 Mock.mock(/\/account\/article\/list/, 'get', account.getArticleList)
 Mock.mock(/\/account\/app\/list/, 'get', account.getAppList)
+
+
 export default Mock

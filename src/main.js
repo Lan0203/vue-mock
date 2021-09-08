@@ -21,7 +21,9 @@ import 'echarts-wordcloud/dist/echarts-wordcloud.min';
 Vue.prototype.$echarts = echarts;
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
+import AvueFormDesign from '@sscfaith/avue-form-design'
 
+Vue.use(AvueFormDesign)
 const g2plot = require('@antv/g2plot');
 Vue.prototype.$g2plot =g2plot;
 Vue.use(VueAxios, axios);
@@ -37,7 +39,7 @@ Vue.use(Avue, {
 })
 // 注册全局容器
 Vue.component('basicContainer', basicContainer)
-
+Vue.use(AvueFormDesign)
 Vue.config.productionTip = false;
 new Vue({
   router,

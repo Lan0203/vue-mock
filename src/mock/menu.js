@@ -1,9 +1,15 @@
 const menuMap = {
   admin:[
+    {icon:'iconfont icon-biaodan',keepAlive: '0',label: '设计表单', name:'设计表单', path: '/form-design',children:[
+      {icon:'iconfont icon-chengyuan',keepAlive: "1", label: "设计表单", name: "设计表单",path: "/form-design/index",children: []},
+      {icon:'iconfont icon-menu',keepAlive: "0",label: "展示表单",name: "展示表单", path: "/form-design/form",children: []},
+    ]},
     {icon:'iconfont icon-quanxian',keepAlive: '0',label: '权限管理',name:'权限管理',  path: '/admin',children:[
       {icon:'iconfont icon-chengyuan',keepAlive: "1", label: "用户管理", name: "用户管理",path: "/admin/user/index",children: []},
       {icon:'iconfont icon-menu',keepAlive: "0",label: "菜单管理",name: "菜单管理", path: "/admin/menu/index",children: []},
       {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "角色管理", name: "角色管理", path: "/admin/role/index",children: []},
+      {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "导出测试", name: "导出测试", path: "/admin/export/index",children: []},
+      {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "时间轴", name: "时间轴", path: "/admin/timeline/index",children: []},
     ]},
     {icon:'iconfont icon-dashboard',keepAlive: '0',label: 'Dashboard', name:'Dashboard', path: '/dashboard',children:[
       {icon:'iconfont icon-fenxi',keepAlive: "1", label: "分析页", name: "分析页",path: "/dashboard/analysis/index",children: []},

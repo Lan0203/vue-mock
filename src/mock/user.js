@@ -6,7 +6,7 @@ const userMap = {
     roles: ['admin'],
     introduction: '我是超级管理员',
     avatar: 'https://gw.alipayobjects.com/zos/rmsportal/WhxKECPNujWoWEFNdnJE.png',
-    username:'admin'
+    username:'admin',
   },
   editor: {
     code: 0,
@@ -24,7 +24,7 @@ const roleMap = {
 }
 
 let userList = [];
-const count = 10;
+const count = 20;
 Mock.Random.extend({
   phone: function () {
     var phonePrefixs = ['132', '135', '189'] // 自己写前缀哈
