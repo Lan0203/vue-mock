@@ -252,6 +252,12 @@ export default {
             opacity: 0.6,
           },
         },
+        yAxis: {
+          title: {
+            text:"测试",
+            position: 'end'
+          }
+        },
         xAxis: {
           label: {
             autoHide: true,

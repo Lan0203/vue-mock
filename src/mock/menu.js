@@ -1,5 +1,8 @@
 const menuMap = {
   admin:[
+    {icon:'iconfont icon-biaodan',keepAlive: '0',label: '数据库管理', name:'数据库管理', path: '/sql',children:[
+      {icon:'iconfont icon-chengyuan',keepAlive: "1", label: "数据库设计", name: "数据库设计",path: "/sql/index",children: []},
+    ]},
     {icon:'iconfont icon-biaodan',keepAlive: '0',label: '设计表单', name:'设计表单', path: '/form-design',children:[
       {icon:'iconfont icon-chengyuan',keepAlive: "1", label: "设计表单", name: "设计表单",path: "/form-design/index",children: []},
       {icon:'iconfont icon-menu',keepAlive: "0",label: "展示表单",name: "展示表单", path: "/form-design/form",children: []},
@@ -10,6 +13,7 @@ const menuMap = {
       {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "角色管理", name: "角色管理", path: "/admin/role/index",children: []},
       {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "导出测试", name: "导出测试", path: "/admin/export/index",children: []},
       {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "时间轴", name: "时间轴", path: "/admin/timeline/index",children: []},
+      {icon:'iconfont icon-jiaoseguanli',keepAlive: "0",label: "antd上传视频", name: "antd上传视频", path: "/admin/timeline/upload",children: []},
     ]},
     {icon:'iconfont icon-dashboard',keepAlive: '0',label: 'Dashboard', name:'Dashboard', path: '/dashboard',children:[
       {icon:'iconfont icon-fenxi',keepAlive: "1", label: "分析页", name: "分析页",path: "/dashboard/analysis/index",children: []},
